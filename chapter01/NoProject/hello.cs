@@ -1,0 +1,1 @@
+Console.WriteLine("Hell World with no project file!");
