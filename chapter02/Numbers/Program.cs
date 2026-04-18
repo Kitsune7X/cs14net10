@@ -4,23 +4,23 @@ uint naturalNumber = 23;
 Console.WriteLine(naturalNumber);
 
 // An integer is a negative or positive whole number or 0.
-int integerNumber = -23;
+const int integerNumber = -23;
 Console.WriteLine(integerNumber);
 
 // A float is a single precision floating-point number,
 // The F or f suffix makes the value a float literal.
 // The suffix is required to compile
-float realNumber = 2.3f;
+const float realNumber = 2.3f;
 Console.WriteLine(realNumber);
 
 // A double is a double-precision floating-point number.
 // double is the default for a number value with a decimal point.
-double anotherRealNumber = 2.3;
+const double anotherRealNumber = 2.3;
 Console.WriteLine(anotherRealNumber);
 
-int decimalNotation = 2_000_000;
-int binaryNotation = 0b_0001_1110_1000_0100_1000_0000;
-int hexadecimalNotation = 0x_001E_8480;
+const int decimalNotation = 2_000_000;
+const int binaryNotation = 0b_0001_1110_1000_0100_1000_0000;
+const int hexadecimalNotation = 0x_001E_8480;
 // Check the three variables have the same value.
 Console.WriteLine($"{decimalNotation == binaryNotation}");
 Console.WriteLine($"{decimalNotation == hexadecimalNotation}");
@@ -41,31 +41,17 @@ Console.WriteLine($"double uses {sizeof(double)} bytes and can store numbers in 
 Console.WriteLine($"decimal uses {sizeof(decimal)} bytes and can store numbers in the range {decimal.MinValue} to {decimal.MaxValue}");
 
 Console.WriteLine("Using doubles:");
-double a = 0.1;
-double b = 0.2;
-if (a + b == 0.3)
-{
-  Console.WriteLine($"{a} + {b} equals {0.3}");
-}
-else
-{
-  Console.WriteLine($"{a} + {b} does NOT equal {0.3}");
-}
+const double a = 0.1;
+const double b = 0.2;
+Console.WriteLine(a + b == 0.3 ? $"{a} + {b} equals {0.3}" : $"{a} + {b} does NOT equal {0.3}");
 
 
 // Testing Decimal accuracy
 Console.WriteLine("Using decimal:");
-decimal c = 0.1M;
-decimal d = 0.2M;
+const decimal c = 0.1M;
+const decimal d = 0.2M;
 
-if (c + d == 0.3M)
-{
-  Console.WriteLine($"{c} + {d} equals {0.3M}");
-}
-else
-{
-  Console.WriteLine($"{c} + {d} does NOT equal {0.3M}");
-}
+Console.WriteLine(c + d == 0.3M ? $"{c} + {d} equals {0.3M}" : $"{c} + {d} does NOT equal {0.3M}");
 
 // Special number values
 #region Special float and double values
