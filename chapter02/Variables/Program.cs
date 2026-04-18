@@ -5,3 +5,5 @@ Console.WriteLine($"{name} is {height} metres tall.");
 // int length1 = name.Length; // Should give compiler error!
 int length2 = ((string)name).Length; // Cast name to a string.
 Console.WriteLine($"{name} has {length2} characters.");
+
+// Testing Github SSH
