@@ -6,4 +6,4 @@ Console.WriteLine($"{name} is {height} metres tall.");
 int length2 = ((string)name).Length; // Cast name to a string.
 Console.WriteLine($"{name} has {length2} characters.");
 
-// Testing Github SSH
+// Testing GitHub SSH
