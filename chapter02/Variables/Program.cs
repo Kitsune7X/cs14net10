@@ -1,4 +1,5 @@
-﻿using System.Dynamic; // For ExpandoObject.
+﻿using System.Drawing;
+using System.Dynamic; // For ExpandoObject.
 using System.Xml;
 
 object height = 1.88; // Storing a double in an object
@@ -61,3 +62,14 @@ XmlDocument xml2 = new XmlDocument();
 var file1 = File.CreateText("something1.txt");
 StreamWriter file2 = File.CreateText("something2.txt");
 
+/* Value types have memory allocated on the stack automatically */
+short age; // Allocates 2 bytes of memory on the stack to store a System.Int16 value.
+long population; // Allocates 8 bytes of memory on the stack to store a System.Int64 value.
+DateTime birthdate; // Allocates 8 bytes of memory on the stack to store a System.DateTime value.
+Point location; // Allocates 8 types of memory on the stack to store a System.Drawing.Point value.
+
+/* Reference types will only have memory allocated on the heap when new is used (but they automatically have 
+some memory allocated on the stack to store information about themselves including the memory address of where they are
+on the heap). */
+
+// Person bob; // Allocate memory in the stack that can point to a Person object in the heap. Initially, bob will have the value null.
