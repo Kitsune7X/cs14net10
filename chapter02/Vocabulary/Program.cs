@@ -44,17 +44,6 @@ WriteLine(horizontalLine);
 string grinningEmoji = char.ConvertFromUtf32(0x1F600);
 WriteLine(grinningEmoji);
 
-// char esc = '\e';
-// WriteLine(esc);
-
-// string xml = """
-//       <person age="50">
-//         <first_name>Mark</first_name>
-//       </person>
-// """;
-
-// WriteLine(xml);
-
 var person = new { FirstName = "Alice", Age = 56 };
 
 string json = $$"""

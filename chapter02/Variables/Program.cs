@@ -1,9 +1,63 @@
-﻿object height = 1.88; // Storing a double in an object
+﻿using System.Dynamic; // For ExpandoObject.
+using System.Xml;
+
+object height = 1.88; // Storing a double in an object
 object name = "Fox"; // Storing a string in an object
 Console.WriteLine($"{name} is {height} metres tall.");
 
 // int length1 = name.Length; // Should give compiler error!
-int length2 = ((string)name).Length; // Cast name to a string.
+var length2 = ((string)name).Length; // Cast name to a string.
 Console.WriteLine($"{name} has {length2} characters.");
 
-// Testing GitHub SSH
+// Dynamic type
+dynamic something;
+// Storing an array of int values in a dynamic object.
+// An array of any type has a Length property.
+something = new[] { 3, 5, 7 };
+// Storing an int in a dynamic object.
+// int does not have a Length property.
+something = 12;
+// Storing a string in a dynamic object.
+// string has a Length property.
+something = "Foxy";
+// This compiles but might throw an exception at run-time.
+Console.WriteLine($"The length of something is {something.Length}");
+// Output the type of something variable.
+Console.WriteLine($"something is a {something.GetType()}");
+
+#region ExpandoObject
+
+dynamic person = new ExpandoObject();
+// Add properties.
+person.FirstName = "John";
+person.LastName = "Doe";
+person.Age = 30;
+Console.WriteLine($"{person.FirstName} {person.LastName} is  {person.Age} years old");
+// Cast the ExpandoObject into a dictionary.
+var dictionary = (IDictionary<string, object>)person;
+// Each item in the dictionary is a key-value pair.
+foreach (var item in dictionary) Console.WriteLine($"{item.Key} = {item.Value}");
+
+#endregion
+
+// Specifying the type of a local variable
+var population = 67_000_000; // UK population.
+var weight = 1.88; // in kg.
+var price = 4.99M; // in pounds sterling.
+var fruit = "Apples";
+var letter = 'Z';
+var happy = true;
+
+
+// Compare good and bad use cases of var
+// Good use of var, avoid repeated type as shown
+// in the more verbose 2nd statement.
+var xml1 = new XmlDocument();
+XmlDocument xml2 = new XmlDocument();
+
+// Bad use of var because we cannot tell the type,
+// we should use a specific type declaration as shown in
+// the 2nd statement.
+var file1 = File.CreateText("something1.txt");
+StreamWriter file2 = File.CreateText("something2.txt");
+
