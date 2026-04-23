@@ -1,6 +1,8 @@
 <Solution>
+  <Project Path="Arguments/Arguments.csproj" />
   <Project Path="Formatting/Formatting.csproj" />
   <Project Path="Numbers/Numbers.csproj" />
+  <Project Path="UserInput/UserInput.csproj" />
   <Project Path="Variables/Variables.csproj" />
   <Project Path="Vocabulary/Vocabulary.csproj" />
 </Solution>

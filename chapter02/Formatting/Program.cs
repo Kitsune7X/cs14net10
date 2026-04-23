@@ -30,3 +30,7 @@ Console.WriteLine(format: "{0,-10} {1,6:N0}", arg0: bananasText, arg1: bananasCo
 double value = 123;
 Console.WriteLine(value.ToString("00000"));
 Console.WriteLine(String.Format("{0:00000}", value));
+
+// Currency formatting
+decimal _value = 0.325M;
+Console.WriteLine("Currency:{0:C}, Percentage:{0:0.0%}", _value);
